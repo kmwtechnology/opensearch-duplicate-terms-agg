@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>RenameGroup</groupId>
+  <artifactId>plugin-template</artifactId>
+  <version>unspecified</version>
+  <packaging>zip</packaging>
+  <name>plugin-template</name>
+  <description>Custom plugin</description>
+  <developers>
+    <developer>
+      <name>OpenSearch</name>
+      <url>https://github.com/opensearch-project/opensearch-plugin-template-java</url>
+    </developer>
+  </developers>
+  <url>https://github.com/abijitran/os-duplicate-aggregation-plugin.git</url>
+  <scm>
+    <url>https://github.com/abijitran/os-duplicate-aggregation-plugin.git</url>
+  </scm>
+</project>
