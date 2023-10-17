@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"org.opensearch.search.aggregations.bucket","l":"UniqueCountAggregationPlugin"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"org.opensearch.search.aggregations.bucket","l":"UniqueCountAggregationBuilder"},{"p":"org.opensearch.plugin","l":"UniqueCountAggregationPlugin"},{"p":"org.opensearch.search.aggregations.bucket","l":"UniqueCountAggregationSupplier"}]

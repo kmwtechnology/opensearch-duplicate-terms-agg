@@ -9,7 +9,7 @@ apply plugin: 'opensearch.pluginzip'
 def pluginName = 'UniqueCountAggregation'
 def pluginDescription = 'Custom plugin'
 def projectPath = 'org.opensearch'
-def pathToPlugin = 'search.aggregations.bucket'
+def pathToPlugin = 'plugin'
 def pluginClassName = 'UniqueCountAggregationPlugin'
 group = "RenameGroup"
 
@@ -29,12 +29,12 @@ publishing {
             pom {
               name = pluginName
               description = pluginDescription
-//              licenses {
-//                license {
-//                  name = "The Apache License, Version 2.0"
-//                  url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
-//                }
-//              }
+              licenses {
+                  license {
+                      name = "The Apache License, Version 2.0"
+                      url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                  }
+              }
               developers {
                 developer {
                   name = "OpenSearch"
@@ -46,13 +46,13 @@ publishing {
     }
 }
 
-opensearchplugin {
-    name pluginName
-    description pluginDescription
-    classname "${projectPath}.${pathToPlugin}.${pluginClassName}"
-    licenseFile rootProject.file('LICENSE.txt')
-    noticeFile rootProject.file('NOTICE.txt')
-}
+//opensearchplugin {
+//    name pluginName
+//    description pluginDescription
+//    classname "${projectPath}.${pathToPlugin}.${pluginClassName}"
+//    licenseFile rootProject.file('LICENSE.txt')
+//    noticeFile rootProject.file('NOTICE.txt')
+//}
 
 // This requires an additional Jar not published as part of build-tools
 loggerUsageCheck.enabled = false

@@ -4,7 +4,7 @@
   <groupId>RenameGroup</groupId>
   <artifactId>plugin-template</artifactId>
   <version>unspecified</version>
-  <packaging>zip</packaging>
+  <packaging>pom</packaging>
   <name>plugin-template</name>
   <description>Custom plugin</description>
   <developers>
@@ -13,8 +13,8 @@
       <url>https://github.com/opensearch-project/opensearch-plugin-template-java</url>
     </developer>
   </developers>
-  <url>https://github.com/abijitran/os-duplicate-aggregation-plugin.git</url>
+  <url>https://AbijitRangesh@bitbucket.org/kmwllc/custom-opensearch-aggregation.git</url>
   <scm>
-    <url>https://github.com/abijitran/os-duplicate-aggregation-plugin.git</url>
+    <url>https://AbijitRangesh@bitbucket.org/kmwllc/custom-opensearch-aggregation.git</url>
   </scm>
 </project>

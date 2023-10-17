@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.opensearch.search.aggregations.bucket"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.opensearch.plugin"},{"l":"org.opensearch.search.aggregations.bucket"}]

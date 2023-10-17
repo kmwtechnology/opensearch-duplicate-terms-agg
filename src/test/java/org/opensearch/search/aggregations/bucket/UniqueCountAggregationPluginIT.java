@@ -8,11 +8,16 @@
 package org.opensearch.search.aggregations.bucket;
 
 import com.carrotsearch.randomizedtesting.annotations.ThreadLeakScope;
-import org.apache.hc.core5.http.HttpEntity;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.stream.Collectors;
 import org.apache.hc.core5.http.ParseException;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.logging.log4j.core.util.IOUtils;
 import org.opensearch.client.Request;
 import org.opensearch.client.Response;
+import org.opensearch.plugin.UniqueCountAggregationPlugin;
 import org.opensearch.plugins.Plugin;
 import org.opensearch.test.OpenSearchIntegTestCase;
 
@@ -34,7 +39,9 @@ public class UniqueCountAggregationPluginIT extends OpenSearchIntegTestCase {
 
     public void testPluginInstalled() throws IOException, ParseException {
         Response response = createRestClient().performRequest(new Request("GET", "/_cat/plugins"));
-        String body = EntityUtils.toString((HttpEntity) response.getEntity(), StandardCharsets.UTF_8);
+        //String body = EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8);
+        InputStream inputStream = response.getEntity().getContent();
+        String body = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
 
         logger.info("response body: {}", body);
         assertThat(body, containsString("UniqueCountAggregation"));

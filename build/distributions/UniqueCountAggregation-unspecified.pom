@@ -30,8 +30,8 @@
       </exclusions>
     </dependency>
   </dependencies>
-  <url>https://github.com/abijitran/os-duplicate-aggregation-plugin.git</url>
+  <url>https://AbijitRangesh@bitbucket.org/kmwllc/custom-opensearch-aggregation.git</url>
   <scm>
-    <url>https://github.com/abijitran/os-duplicate-aggregation-plugin.git</url>
+    <url>https://AbijitRangesh@bitbucket.org/kmwllc/custom-opensearch-aggregation.git</url>
   </scm>
 </project>
