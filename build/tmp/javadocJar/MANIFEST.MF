@@ -1,2 +1,21 @@
 Manifest-Version: 1.0
+Module-Origin: https://github.com/abijitran/os-duplicate-aggregation-plu
+ gin.git
+Change: 472508d3d00d100f1fd6abf6ddc44a8c93ea05a4
+X-Compile-OpenSearch-Version: 2.9.0-SNAPSHOT
+X-Compile-Lucene-Version: 9.7.0
+X-Compile-OpenSearch-Snapshot: true
+Implementation-Title: RenameGroup#plugin-template;unspecified
+Implementation-Version: unspecified
+Built-Status: integration
+Built-By: abijitrangesh
+Built-OS: Mac OS X
+Build-Timezone: America/New_York
+Build-Date-UTC: 2023-10-17T14:19:37.279866Z
+Build-Date: 2023-10-17T14:19:37.274400Z
+Gradle-Version: 8.3
+Created-By: 11.0.15.1+2-LTS-10 (Oracle Corporation)
+X-Compile-Target-JDK: 11
+X-Compile-Source-JDK: 11
+Build-Java-Version: 11
 

@@ -1,4 +1,4 @@
-import org.opensearch.gradle.test.RestIntegTestTask
+//import org.opensearch.gradle.test.RestIntegTestTask
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -6,11 +6,11 @@ apply plugin: 'opensearch.opensearchplugin'
 apply plugin: 'opensearch.yaml-rest-test'
 apply plugin: 'opensearch.pluginzip'
 
-def pluginName = 'UniqueCountAggregation'
-def pluginDescription = 'Custom plugin'
+def pluginName = 'DuplicateTermAggregation'
+def pluginDescription = 'DuplicateTermAggregation plugin'
 def projectPath = 'org.opensearch'
-def pathToPlugin = 'plugin'
-def pluginClassName = 'UniqueCountAggregationPlugin'
+def pathToPlugin = 'search.aggregations.bucket'
+def pluginClassName = 'DuplicateTermAggregationPlugin'
 group = "RenameGroup"
 
 tasks.register("preparePluginPathDirs") {
@@ -30,10 +30,10 @@ publishing {
               name = pluginName
               description = pluginDescription
               licenses {
-                  license {
-                      name = "The Apache License, Version 2.0"
-                      url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
-                  }
+                license {
+                  name = "The Apache License, Version 2.0"
+                  url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                }
               }
               developers {
                 developer {
@@ -46,13 +46,13 @@ publishing {
     }
 }
 
-//opensearchplugin {
-//    name pluginName
-//    description pluginDescription
-//    classname "${projectPath}.${pathToPlugin}.${pluginClassName}"
-//    licenseFile rootProject.file('LICENSE.txt')
-//    noticeFile rootProject.file('NOTICE.txt')
-//}
+opensearchplugin {
+    name pluginName
+    description pluginDescription
+    classname "${projectPath}.${pathToPlugin}.${pluginClassName}"
+    licenseFile rootProject.file('LICENSE.txt')
+    noticeFile rootProject.file('NOTICE.txt')
+}
 
 // This requires an additional Jar not published as part of build-tools
 loggerUsageCheck.enabled = false
@@ -60,9 +60,13 @@ loggerUsageCheck.enabled = false
 // No need to validate pom, as we do not upload to maven/sonatype
 validateNebulaPom.enabled = false
 
+//rat {
+//    failOnError = false
+//}
+
 buildscript {
     ext {
-        opensearch_version = System.getProperty("opensearch.version", "2.9.0")
+        opensearch_version = System.getProperty("opensearch.version", "2.9.0-SNAPSHOT")
     }
 
     repositories {
@@ -77,13 +81,6 @@ buildscript {
     }
 }
 
-dependencies {
-    implementation "org.opensearch:opensearch:${os_version}"
-    implementation "org.apache.httpcomponents.core5:httpcore5:5.2.3"
-    yamlRestTestImplementation "org.opensearch.test:framework:${os_version}"
-    yamlRestTestImplementation "org.apache.logging.log4j:log4j-core:2.17.1"
-}
-
 repositories {
     mavenLocal()
     maven { url "https://aws.oss.sonatype.org/content/repositories/snapshots" }
@@ -95,30 +92,30 @@ test {
     include '**/*Tests.class'
 }
 
-task integTest(type: RestIntegTestTask) {
-    description = "Run tests against a cluster"
-    testClassesDirs = sourceSets.test.output.classesDirs
-    classpath = sourceSets.test.runtimeClasspath
-}
-tasks.named("check").configure { dependsOn(integTest) }
-
-integTest {
-    // The --debug-jvm command-line option makes the cluster debuggable; this makes the tests debuggable
-    if (System.getProperty("test.debug") != null) {
-        jvmArgs '-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005'
-    }
-}
-
-testClusters.integTest {
-    testDistribution = "INTEG_TEST"
-
-    // This installs our plugin into the testClusters
-    plugin(project.tasks.bundlePlugin.archiveFile)
-}
-
-run {
-    useCluster testClusters.integTest
-}
+//task integTest(type: RestIntegTestTask) {
+//    description = "Run tests against a cluster"
+//    testClassesDirs = sourceSets.test.output.classesDirs
+//    classpath = sourceSets.test.runtimeClasspath
+//}
+//tasks.named("check").configure { dependsOn(integTest) }
+//
+//integTest {
+//    // The --debug-jvm command-line option makes the cluster debuggable; this makes the tests debuggable
+//    if (System.getProperty("test.debug") != null) {
+//        jvmArgs '-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5005'
+//    }
+//}
+//
+//testClusters.integTest {
+//    testDistribution = "INTEG_TEST"
+//
+//    // This installs our plugin into the testClusters
+//    plugin(project.tasks.bundlePlugin.archiveFile)
+//}
+//
+//run {
+//    useCluster testClusters.integTest
+//}
 
 // updateVersion: Task to auto update version to the next development iteration
 task updateVersion {

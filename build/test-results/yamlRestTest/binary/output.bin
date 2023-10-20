@@ -1,0 +1,4 @@
+«[2023-10-17T18:46:28,729][INFO ][o.o.s.a.b.DuplicateTermAggregationClientYamlTestSuiteIT] [test] [yaml=/10_basic/Test that the plugin is loaded in OpenSearch] before test
+°[2023-10-17T18:46:28,896][INFO ][o.o.s.a.b.DuplicateTermAggregationClientYamlTestSuiteIT] [test] initializing REST clients against [http://[::1]:61901, http://127.0.0.1:61902]
+ï[2023-10-17T18:46:29,638][INFO ][o.o.s.a.b.DuplicateTermAggregationClientYamlTestSuiteIT] [test] initializing client, minimum OpenSearch version [2.9.0], cluster-manager version, [2.9.0], hosts [http://[::1]:61901, http://127.0.0.1:61902]
+ª[2023-10-17T18:46:29,878][INFO ][o.o.s.a.b.DuplicateTermAggregationClientYamlTestSuiteIT] [test] [yaml=/10_basic/Test that the plugin is loaded in OpenSearch] after test
