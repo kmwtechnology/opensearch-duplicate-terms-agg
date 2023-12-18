@@ -1,0 +1,1 @@
+{"type": "deprecation", "timestamp": "2023-12-18T11:03:06,542-05:00", "level": "DEPRECATION", "component": "o.o.d.n.Node", "cluster.name": "yamlRestTest", "node.name": "yamlRestTest-0", "message": "no-jdk distributions that do not bundle a JDK are deprecated and will be removed in a future release" }

@@ -1,1 +1,1 @@
-org.opensearch.search.aggregations.bucket
+org.opensearch.search.aggregations.bucket.terms

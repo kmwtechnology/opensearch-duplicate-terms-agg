@@ -5,4 +5,4 @@
         h: component
 
   - match:
-      $body: /^UniqueCountAggregation\n$/
+      $body: /^duplicate-terms-plugin\n$/

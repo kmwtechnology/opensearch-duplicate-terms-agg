@@ -1,0 +1,13 @@
+[2023-12-18T16:03:02.293+0000][87924][gc,heap] Heap region size: 1M
+[2023-12-18T16:03:02.305+0000][87924][gc     ] Using G1
+[2023-12-18T16:03:02.305+0000][87924][gc,heap,coops] Heap address: 0x00000007a0000000, size: 512 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+[2023-12-18T16:03:02.635+0000][87924][safepoint    ] Entering safepoint region: EnableBiasedLocking
+[2023-12-18T16:03:02.635+0000][87924][safepoint    ] Leaving safepoint region
+[2023-12-18T16:03:02.635+0000][87924][safepoint    ] Total time for which application threads were stopped: 0.0003693 seconds, Stopping threads took: 0.0001360 seconds
+[2023-12-18T16:03:02.644+0000][87924][gc,heap,exit ] Heap
+[2023-12-18T16:03:02.644+0000][87924][gc,heap,exit ]  garbage-first heap   total 524288K, used 2048K [0x00000007a0000000, 0x00000007c0000000)
+[2023-12-18T16:03:02.644+0000][87924][gc,heap,exit ]   region size 1024K, 3 young (3072K), 0 survivors (0K)
+[2023-12-18T16:03:02.644+0000][87924][gc,heap,exit ]  Metaspace       used 3187K, capacity 4480K, committed 4480K, reserved 1056768K
+[2023-12-18T16:03:02.644+0000][87924][gc,heap,exit ]   class space    used 271K, capacity 384K, committed 384K, reserved 1048576K
+[2023-12-18T16:03:02.645+0000][87924][safepoint    ] Application time: 0.0041424 seconds
+[2023-12-18T16:03:02.645+0000][87924][safepoint    ] Entering safepoint region: Halt
