@@ -10,8 +10,8 @@
   <artifactId>DuplicateTermAggregation</artifactId>
   <version>unspecified</version>
   <name>plugin-template</name>
-  <url>https://github.com/abijitran/os-duplicate-aggregation-plugin.git</url>
+  <url>https://github.com/abijitran/underscore-duplicate-term-aggregation.git</url>
   <scm>
-    <url>https://github.com/abijitran/os-duplicate-aggregation-plugin.git</url>
+    <url>https://github.com/abijitran/underscore-duplicate-term-aggregation.git</url>
   </scm>
 </project>

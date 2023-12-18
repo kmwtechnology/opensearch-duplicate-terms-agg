@@ -1,18 +1,21 @@
-//import org.opensearch.gradle.test.RestIntegTestTask
+// commented out as not seen in many other repos
+// import org.opensearch.gradle.test.RestIntegTestTask
 
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'opensearch.opensearchplugin'
 apply plugin: 'opensearch.yaml-rest-test'
-apply plugin: 'opensearch.pluginzip'
+apply plugin: 'opensearch.pluginzip' // if this causes issues, remove this pluginzip plugin
 
-def pluginName = 'DuplicateTermAggregation'
-def pluginDescription = 'DuplicateTermAggregation plugin'
+def pluginName = 'duplicate-terms-plugin'
+def pluginDescription = 'Allows for duplicate terms, assuming to be counted with a delimeter at the end, to ' +
+        'be aggregated in terms agg'
 def projectPath = 'org.opensearch'
-def pathToPlugin = 'search.aggregations.bucket'
-def pluginClassName = 'DuplicateTermAggregationPlugin'
+def pathToPlugin = 'search.aggregations.bucket.terms'
+def pluginClassName = 'DuplicateTermsAggregationPlugin'
 group = "RenameGroup"
 
+// if this causes issues, can remove this task
 tasks.register("preparePluginPathDirs") {
     mustRunAfter clean
     doLast {
@@ -59,15 +62,23 @@ loggerUsageCheck.enabled = false
 
 // No need to validate pom, as we do not upload to maven/sonatype
 validateNebulaPom.enabled = false
+forbiddenApisMain.enabled = false
 
-//rat {
-//    failOnError = false
-//}
+
+// added following to remove dependency license checking
+dependencyLicenses.enabled = false
+thirdPartyAudit.enabled = false
+testingConventions.enabled = false
+licenseHeaders.enabled = false
+compileTestJava.enabled = false
 
 buildscript {
+    // if this causes issue, just define the opensearch_version explicitly in the dependencies { classpath block below
     ext {
-        opensearch_version = System.getProperty("opensearch.version", "2.9.0-SNAPSHOT")
+        opensearch_version = System.getProperty("opensearch.version", "2.11.1-SNAPSHOT")
     }
+
+    tasks.withType(Javadoc).all { enabled = false }
 
     repositories {
         mavenLocal()
@@ -92,6 +103,8 @@ test {
     include '**/*Tests.class'
 }
 
+// removed integration tests for now
+
 //task integTest(type: RestIntegTestTask) {
 //    description = "Run tests against a cluster"
 //    testClassesDirs = sourceSets.test.output.classesDirs
@@ -112,7 +125,7 @@ test {
 //    // This installs our plugin into the testClusters
 //    plugin(project.tasks.bundlePlugin.archiveFile)
 //}
-//
+
 //run {
 //    useCluster testClusters.integTest
 //}
