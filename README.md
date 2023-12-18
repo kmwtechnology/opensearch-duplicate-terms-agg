@@ -45,7 +45,7 @@ Duplicate Terms Aggregation
 ### Parameters
 
 - `field` : field to aggregate on
-- `separator` : separator for path hierarchy (default to "/")
+- `separator` : separator for path hierarchy (default to "_")
 - `order` : order parameter to define how to sort result. Allowed parameters are `_key`, `_count` or sub aggregation name. Default to {"_count": "desc}.
 - `size`: size parameter to define how many buckets should be returned. Default to 10.
 - `shard_size`: how many buckets returned by each shards. Set to size if smaller, default to size if the search request needs to go to a single shard, and (size * 1.5 + 10) otherwise (more information here: https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html#_shard_size_3).
