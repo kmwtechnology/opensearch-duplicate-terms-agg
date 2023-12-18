@@ -311,7 +311,6 @@ public class DuplicateTermsAggregator extends DuplicateAbstractStringTermsAggreg
       SortedSetDocValues docValues = DocValues.getSortedSet(reader, aggField);
       SortedBinaryDocValues underscoreValues = DuplicateTermsAggregator.toString(docValues, separator);
       // This is where the conversion to our custom SortedBinaryDocValues occurs
-      SortedBinaryDocValues values = underscoreValues;
       return new LeafBucketCollectorBase(sub, values) {
 
         /**
@@ -322,14 +321,14 @@ public class DuplicateTermsAggregator extends DuplicateAbstractStringTermsAggreg
         public void collect(int doc, long owningBucketOrd) throws IOException {
           // Useful log statement for viewing doc nums and bucket ord numbers, expect doc nums to go up and bucket ords to remain at 0
           // log.info("We are in the collect method, the doc num is " + doc + " the owningBucketOrd is " + owningBucketOrd);
-          if (false == values.advanceExact(doc)) {
+          if (false == underscoreValues.advanceExact(doc)) {
             return;
           }
-          int valuesCount = values.docValueCount();
+          int valuesCount = underscoreValues.docValueCount();
           // Useful log statement, expect this value to be the total number of values in a document
           // log.info("The valuesCount in getLeafCollector is " + valuesCount);
           for (int i = 0; i < valuesCount; ++i) {
-            BytesRef bytes = values.nextValue();
+            BytesRef bytes = underscoreValues.nextValue();
             if (includeExclude != null && false == includeExclude.accept(bytes)) {
               continue;
             }
