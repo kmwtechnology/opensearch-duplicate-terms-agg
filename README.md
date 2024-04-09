@@ -10,28 +10,30 @@ This is a Terms Aggregation
 Installation
 ------------
 
-1. Clone repository `main` branch
+1. Clone repository `master` branch
 
-2. Perform `./gradlew build` or `./gradlew assemble` (no tests) at top-level
+2. Install `gradle` and run `gradle wrapper` at the top-level
 
-3. Perform `./gradlew check` at top-level to run tests and package the plug-in
+3. Perform `./gradlew build` or `./gradlew assemble` (no tests) at top-level
 
-4. Navigate to `build/distributions` directory within project and confirm that `duplicate-terms-plugin.jar` and `duplicate-terms-plugin.zip` both exist
+4. Perform `./gradlew check` at top-level to run tests and package the plug-in
 
-5. Copy absolute path of aforementioned `duplicate-terms-plugin.zip`
+5. Navigate to `build/distributions` directory within project and confirm that `duplicate-terms-plugin.jar` and `duplicate-terms-plugin.zip` both exist
 
-6. Clone version 2.11.1 of OS from OS repo or use your own 
+6. Copy absolute path of aforementioned `duplicate-terms-plugin.zip`
 
-7. Perform `./gradlew localDistro` at top-level
+7. Clone version 2.11.1 of OS from OS repo or use your own 
 
-8. `cd` into `build/distribution/local/opensearch-2.11.1-SNAPSHOT` 
+8. Perform `./gradlew localDistro` at top-level
 
-9. Perform `bin/opensearch-plugin install file://<absolute-path-from-step-5>` e.g. `file:///Users/abijitrangesh/Documents/GitHub/underscore-duplicate-term-aggregation/build/distributions/duplicate-terms-plugin.zip`
+9. `cd` into `build/distribution/local/opensearch-2.11.1-SNAPSHOT` 
+
+10. Perform `bin/opensearch-plugin install file://<absolute-path-from-step-5>` e.g. `file:///Users/abijitrangesh/Documents/GitHub/underscore-duplicate-term-aggregation/build/distributions/duplicate-terms-plugin.zip`
 Notice the number of slashes after `file:`
 
-10. Your plug-in should be working, if we want to re-install the plug-in, first remove the plug-in via `bin/OpenSearch-plugin remove duplicate-terms-plugin` and then run the install command from Step 9
+11. Your plug-in should be working, if we want to re-install the plug-in, first remove the plug-in via `bin/OpenSearch-plugin remove duplicate-terms-plugin` and then run the install command from Step 9
 
-11. To run your OS instance, perform `bin/opensearch` within 2.11.1 distribution of OS (from Step 8)
+12. To run your OS instance, perform `bin/opensearch` within 2.11.1 distribution of OS (from Step 8)
 
 
 Development Environment Setup
