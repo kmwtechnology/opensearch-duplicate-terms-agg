@@ -311,7 +311,7 @@ public class DuplicateTermsAggregator extends DuplicateAbstractStringTermsAggreg
       SortedSetDocValues docValues = DocValues.getSortedSet(reader, aggField);
       SortedBinaryDocValues underscoreValues = DuplicateTermsAggregator.toString(docValues, separator);
       // This is where the conversion to our custom SortedBinaryDocValues occurs
-      return new LeafBucketCollectorBase(sub, values) {
+      return new LeafBucketCollectorBase(sub, docValues) {
 
         /**
          * Collect the given doc in the given bucket.
