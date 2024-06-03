@@ -36,11 +36,6 @@ Notice the number of slashes after `file:`
 12. To run your OS instance, perform `bin/opensearch` within 2.11.1 distribution of OS (from Step 8)
 
 
-Development Environment Setup
-------------
-
-Follow steps 1 & 2 of installation, 
-
 Duplicate Terms Aggregation
 --------------------------
 
